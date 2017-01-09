@@ -1,0 +1,60 @@
+# Project: ProjetoC
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Login.o MenuPrinc.o Professor.o Aluno.o Curso.o CadastroPrevDef.o DefesaEstag.o HorarioBanc.o relacaoal.o relacaoprof.o relacaocurso.o $(RES)
+LINKOBJ  = Login.o MenuPrinc.o Professor.o Aluno.o Curso.o CadastroPrevDef.o DefesaEstag.o HorarioBanc.o relacaoal.o relacaoprof.o relacaocurso.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ProjetoC.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ProjetoC.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "ProjetoC.exe" $(LIBS)
+
+Login.o: Login.c
+	$(CC) -c Login.c -o Login.o $(CFLAGS)
+
+MenuPrinc.o: MenuPrinc.c
+	$(CC) -c MenuPrinc.c -o MenuPrinc.o $(CFLAGS)
+
+Professor.o: Professor.c
+	$(CC) -c Professor.c -o Professor.o $(CFLAGS)
+
+Aluno.o: Aluno.c
+	$(CC) -c Aluno.c -o Aluno.o $(CFLAGS)
+
+Curso.o: Curso.c
+	$(CC) -c Curso.c -o Curso.o $(CFLAGS)
+
+CadastroPrevDef.o: CadastroPrevDef.c
+	$(CC) -c CadastroPrevDef.c -o CadastroPrevDef.o $(CFLAGS)
+
+DefesaEstag.o: DefesaEstag.c
+	$(CC) -c DefesaEstag.c -o DefesaEstag.o $(CFLAGS)
+
+HorarioBanc.o: HorarioBanc.c
+	$(CC) -c HorarioBanc.c -o HorarioBanc.o $(CFLAGS)
+
+relacaoal.o: relacaoal.c
+	$(CC) -c relacaoal.c -o relacaoal.o $(CFLAGS)
+
+relacaoprof.o: relacaoprof.c
+	$(CC) -c relacaoprof.c -o relacaoprof.o $(CFLAGS)
+
+relacaocurso.o: relacaocurso.c
+	$(CC) -c relacaocurso.c -o relacaocurso.o $(CFLAGS)
